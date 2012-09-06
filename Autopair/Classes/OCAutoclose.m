@@ -46,7 +46,7 @@
 		// Dealing with a brace, so we need to see if the braces in the document are balanced
 		// Rather than parse through everything, we are just doing a simple count
 		// First, figure out the ranges that are not strings or comments
-		SXSelectorGroup *ignoredZones = [SXSelectorGroup selectorGroupWithString:@"string, comment"];
+		SXSelectorGroup *ignoredZones = [SXSelectorGroup selectorGroupWithString:@"string, comment, regex"];
 		NSArray *ignoredSelectables = [[[context syntaxTree] rootZone] descendantSelectablesMatchingSelectors:ignoredZones];
 		MRRangeSet *rangeSet = [MRRangeSet rangeSet];
 		[rangeSet unionRange:NSMakeRange(0, [[context string] length])];
