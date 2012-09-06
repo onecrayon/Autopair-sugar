@@ -3,7 +3,7 @@
 //  Autopair
 //
 //  Created by Ian Beck on 10/13/11.
-//  Copyright 2011 MacRabbit. All rights reserved.
+//  Copyright 2011 One Crayon. MIT license.
 //
 
 #import <Foundation/Foundation.h>

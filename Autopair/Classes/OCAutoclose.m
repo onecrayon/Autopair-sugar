@@ -3,7 +3,7 @@
 //  Autopair
 //
 //  Created by Ian Beck on 9/6/12.
-//  Copyright 2012 MacRabbit. All rights reserved.
+//  Copyright 2012 One Crayon. MIT license.
 //
 
 #import "OCAutoclose.h"
