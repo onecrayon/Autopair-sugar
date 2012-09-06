@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<!-- Normally this would be specified on a per-language basis in their respective Sugars, but we define the built-in languages here -->
+	<setting name="autopair-opt-in">
+		<syntax-context>html tag.open, html tag.open > punctuation.end, xml tag.open, xml tag.open > punctuation.end</syntax-context>
+		<value>'"</value>
+	</setting>
+	
+	<setting name="autopair-opt-in">
+		<language-context>js, php, ruby, python</language-context>
+		<value>[{('"</value>
+	</setting>
+</settings>
