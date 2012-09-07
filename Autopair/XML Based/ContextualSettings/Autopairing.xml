@@ -7,7 +7,7 @@
 	</setting>
 	
 	<setting name="autopair-opt-in">
-		<language-context>js, php, ruby, python</language-context>
+		<syntax-context>js, js :not(comment, regex), php, php :not(comment), ruby, ruby :not(comment), python, python :not(comment)</syntax-context>
 		<value>[{('"</value>
 	</setting>
 </settings>
