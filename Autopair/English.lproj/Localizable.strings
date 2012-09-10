@@ -12,11 +12,3 @@
 "com.onecrayon.sugar.autopair.round-brace.title.wrap" = "Wrap With Parentheses";
 "com.onecrayon.sugar.autopair.angle-brace.title" = "Autopair Angle Brace";
 "com.onecrayon.sugar.autopair.angle-brace.title.wrap" = "Wrap With Angle Braces";
-
-/* Autoclosing just looks like normal typing, so name it accordingly */
-"com.onecrayon.sugar.autopair.single-quote.autoclose.title" = "Typing";
-"com.onecrayon.sugar.autopair.double-quote.autoclose.title" = "Typing";
-"com.onecrayon.sugar.autopair.square-brace.autoclose.title" = "Typing";
-"com.onecrayon.sugar.autopair.curly-brace.autoclose.title" = "Typing";
-"com.onecrayon.sugar.autopair.round-brace.autoclose.title" = "Typing";
-"com.onecrayon.sugar.autopair.angle-brace.autoclose.title" = "Typing";

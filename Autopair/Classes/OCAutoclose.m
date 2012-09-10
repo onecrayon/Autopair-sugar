@@ -74,6 +74,7 @@
 	} else {
 		// We don't have a balanced character, so just insert the character
 		CETextRecipe *recipe = [CETextRecipe textRecipe];
+		[recipe setUndoActionName:@"Typing"];
 		[recipe insertString:character atIndex:range.location];
 		return [context applyTextRecipe:recipe];
 	}
