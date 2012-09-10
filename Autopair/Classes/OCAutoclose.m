@@ -32,7 +32,7 @@
 
 - (BOOL)performActionWithContext:(id)context error:(NSError **)outError
 {
-	// TODO: check if we need to skip over the closing character, or if we are closing an unbalanced delimiter
+	// Check if we need to skip over the closing character, or if we are closing an unbalanced delimiter
 	BOOL skipCharacter = NO;
 	NSRange range = [[[context selectedRanges] objectAtIndex:0] rangeValue];
 	if ([character isEqualToString:@"'"] || [character isEqualToString:@"\""]) {
