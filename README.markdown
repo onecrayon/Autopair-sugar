@@ -33,7 +33,7 @@ To enable autopairing in a third-party Sugar, you will need to create a [Context
 
 You can use either `<syntax-context>` or `<language-context>` to define where the setting is valid (see the [Espresso Sugar wiki](http://wiki.macrabbit.com/index/ActionXML/#actions) for documentation), and the `<value>` element should contain a string specifying which characters you want to be autopaired in that context. Autopair.sugar currently supports quotation marks (`'` or `"`) and braces (`[`, `{`, `(`, or `<`).
 
-You can also add support for arbitrary contexts by creating a custom Sugar and defining your own ContextualSettings inside of it; Autopair.sugar does not care here the settings are defined.
+You can also add support for arbitrary contexts by creating a custom Sugar and defining your own ContextualSettings inside of it; Autopair.sugar does not care where the settings are defined.
 
 ## MIT License
 
