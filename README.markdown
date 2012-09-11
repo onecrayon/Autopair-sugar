@@ -57,7 +57,7 @@ If you want to autopair something other than ASCII quotation marks and braces, y
 
 (The "less than" bracket has to be specified either with an entity, as per above, or within a CDATA block or it will invalidate your XML.)
 
-**TextActions/AngleBrackets.xml** contains the action definitions that enable angle brackets and auto-closing capture:
+**TextActions/AngleBrackets.xml** contains the action definitions that enable angle brackets and auto-closing capture (this is necessary to trigger the action in the first place; the autopair-opt-in setting then configures in what contexts the action should take over that character):
 
     <?xml version="1.0"?>
     <action-recipes>
