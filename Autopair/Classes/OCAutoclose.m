@@ -22,7 +22,7 @@
 - (BOOL)canPerformActionWithContext:(id)context
 {
 	NSRange range = [[[context selectedRanges] objectAtIndex:0] rangeValue];
-	return [self autopairMode] > 0 && range.length == 0 && range.location < [[context string] length] && [[[context string] substringWithRange:NSMakeRange(range.location, 1)] isEqualToString:character] && [context settingForKey:@"autopair-opt-in" inRange:range] != nil && [[context settingForKey:@"autopair-opt-in" inRange:range] containsString:balancedCharacter];
+	return [self autopairMode] > 0 && range.length == 0 && range.location < [[context string] length] && [[[context string] substringWithRange:NSMakeRange(range.location, 1)] isEqualToString:character] && [self balancingCharacterFor:character withRange:range inContext:context] != nil;
 }
 
 - (NSString *)titleWithContext:(id)context
@@ -59,7 +59,7 @@
 		NSString *text;
 		for (NSValue *value in [rangeSet ranges]) {
 			text = [[context string] substringWithRange:[value rangeValue]];
-			openBraces += [[text componentsSeparatedByString:balancedCharacter] count] - 1;
+			openBraces += [[text componentsSeparatedByString:[self balancingCharacterFor:character withRange:range inContext:context]] count] - 1;
 			closeBraces += [[text componentsSeparatedByString:character] count] - 1;
 		}
 		if (openBraces == closeBraces) {
@@ -74,10 +74,28 @@
 	} else {
 		// We don't have a balanced character, so just insert the character
 		CETextRecipe *recipe = [CETextRecipe textRecipe];
+		// FIXME: figure out how to localize this!
 		[recipe setUndoActionName:@"Typing"];
 		[recipe insertString:character atIndex:range.location];
 		return [context applyTextRecipe:recipe];
 	}
+}
+
+- (NSString *)balancingCharacterFor:(NSString *)targetCharacter withRange:(NSRange)range inContext:(id)context
+{
+	NSString *optInString = [context settingForKey:@"autopair-opt-in" inRange:range];
+	// If we don't have an opt-in, return nil
+	if (optInString == nil)
+		return nil;
+	NSRange charRange = [optInString rangeOfString:targetCharacter];
+	// If the character isn't in the opt-in, return nil
+	if (charRange.location == NSNotFound)
+		return nil;
+	// If the character doesn't have a balanced character (start of the opt-in string), return the character
+	if (charRange.location == 0)
+		return targetCharacter;
+	// We have a balanced character, so return that
+	return [optInString substringWithRange:NSMakeRange(charRange.location - 1, 1)];
 }
 
 @end

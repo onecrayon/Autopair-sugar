@@ -1,14 +1,1 @@
 "autopair.menu.title" = "Autopair";
-
-"com.onecrayon.sugar.autopair.single-quote.title" = "Autopair Single Quote";
-"com.onecrayon.sugar.autopair.single-quote.title.wrap" = "Wrap With Single Quotes";
-"com.onecrayon.sugar.autopair.double-quote.title" = "Autopair Double Quote";
-"com.onecrayon.sugar.autopair.double-quote.title.wrap" = "Wrap With Double Quotes";
-"com.onecrayon.sugar.autopair.square-brace.title" = "Autopair Square Brace";
-"com.onecrayon.sugar.autopair.square-brace.title.wrap" = "Wrap With Square Braces";
-"com.onecrayon.sugar.autopair.curly-brace.title" = "Autopair Curly Brace";
-"com.onecrayon.sugar.autopair.curly-brace.title.wrap" = "Wrap With Curly Braces";
-"com.onecrayon.sugar.autopair.round-brace.title" = "Autopair Parenthesis";
-"com.onecrayon.sugar.autopair.round-brace.title.wrap" = "Wrap With Parentheses";
-"com.onecrayon.sugar.autopair.angle-brace.title" = "Autopair Angle Brace";
-"com.onecrayon.sugar.autopair.angle-brace.title.wrap" = "Wrap With Angle Braces";

@@ -2,5 +2,7 @@
 <action-categories>
 	
 	<category id="autopair.menu" show="submenu"></category>
+	<category id="autopair.quotes" show="inline"></category>
+	<category id="autopair.braces" show="inline"></category>
 	
 </action-categories>

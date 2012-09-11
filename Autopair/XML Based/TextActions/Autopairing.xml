@@ -1,63 +1,48 @@
 <?xml version="1.0"?>
 <action-recipes>
 	
-	<action id="com.onecrayon.sugar.autopair.single-quote" category="autopair.menu/1">
+	<action id="com.onecrayon.sugar.autopair.single-quote" category="autopair.menu/autopair.quotes/1">
 		<class>OCAutopair</class>
 		<text-trigger key-equivalent="'"></text-trigger>
 		<when-disabled>hide</when-disabled>
 		<setup>
 			<character>'</character>
-			<balanced-character>'</balanced-character>
 		</setup>
 	</action>
 	
-	<action id="com.onecrayon.sugar.autopair.double-quote" category="autopair.menu/2">
+	<action id="com.onecrayon.sugar.autopair.double-quote" category="autopair.menu/autopair.quotes/2">
 		<class>OCAutopair</class>
 		<text-trigger key-equivalent='"'></text-trigger>
 		<when-disabled>hide</when-disabled>
 		<setup>
 			<character>"</character>
-			<balanced-character>"</balanced-character>
 		</setup>
 	</action>
 	
-	<action id="com.onecrayon.sugar.autopair.round-brace" category="autopair.menu/3">
+	<action id="com.onecrayon.sugar.autopair.round-brace" category="autopair.menu/autopair.braces/1">
 		<class>OCAutopair</class>
 		<text-trigger key-equivalent="("></text-trigger>
 		<when-disabled>hide</when-disabled>
 		<setup>
 			<character>(</character>
-			<balanced-character>)</balanced-character>
 		</setup>
 	</action>
 	
-	<action id="com.onecrayon.sugar.autopair.square-brace" category="autopair.menu/4">
+	<action id="com.onecrayon.sugar.autopair.square-brace" category="autopair.menu/autopair.braces/2">
 		<class>OCAutopair</class>
 		<text-trigger key-equivalent="["></text-trigger>
 		<when-disabled>hide</when-disabled>
 		<setup>
 			<character>[</character>
-			<balanced-character>]</balanced-character>
 		</setup>
 	</action>
 	
-	<action id="com.onecrayon.sugar.autopair.curly-brace" category="autopair.menu/5">
+	<action id="com.onecrayon.sugar.autopair.curly-brace" category="autopair.menu/autopair.braces/3">
 		<class>OCAutopair</class>
 		<text-trigger key-equivalent="{"></text-trigger>
 		<when-disabled>hide</when-disabled>
 		<setup>
 			<character>{</character>
-			<balanced-character>}</balanced-character>
-		</setup>
-	</action>
-	
-	<action id="com.onecrayon.sugar.autopair.angle-brace" category="autopair.menu/6">
-		<class>OCAutopair</class>
-		<text-trigger key-equivalent="&lt;"></text-trigger>
-		<when-disabled>hide</when-disabled>
-		<setup>
-			<character>&lt;</character>
-			<balanced-character>></balanced-character>
 		</setup>
 	</action>
 	
@@ -68,7 +53,6 @@
 		<text-trigger key-equivalent="'"></text-trigger>
 		<setup>
 			<character>'</character>
-			<balanced-character>'</balanced-character>
 		</setup>
 	</action>
 	
@@ -77,7 +61,6 @@
 		<text-trigger key-equivalent='"'></text-trigger>
 		<setup>
 			<character>"</character>
-			<balanced-character>"</balanced-character>
 		</setup>
 	</action>
 	
@@ -86,7 +69,6 @@
 		<text-trigger key-equivalent="]"></text-trigger>
 		<setup>
 			<character>]</character>
-			<balanced-character>[</balanced-character>
 		</setup>
 	</action>
 	
@@ -95,7 +77,6 @@
 		<text-trigger key-equivalent="}"></text-trigger>
 		<setup>
 			<character>}</character>
-			<balanced-character>{</balanced-character>
 		</setup>
 	</action>
 	
@@ -104,16 +85,6 @@
 		<text-trigger key-equivalent=")"></text-trigger>
 		<setup>
 			<character>)</character>
-			<balanced-character>(</balanced-character>
-		</setup>
-	</action>
-	
-	<action id="com.onecrayon.sugar.autopair.angle-brace.autoclose" category="hidden">
-		<class>OCAutoclose</class>
-		<text-trigger key-equivalent=">"></text-trigger>
-		<setup>
-			<character>></character>
-			<balanced-character>&lt;</balanced-character>
 		</setup>
 	</action>
 	

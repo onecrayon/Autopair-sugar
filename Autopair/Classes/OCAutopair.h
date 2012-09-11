@@ -12,9 +12,9 @@
 @interface OCAutopair : NSObject {
 @protected
     NSString *character;
-	NSString *balancedCharacter;
 }
 
 - (NSInteger)autopairMode;
+- (NSString *)balancingCharacterFor:(NSString *)character withRange:(NSRange)range inContext:(id)context;
 
 @end
