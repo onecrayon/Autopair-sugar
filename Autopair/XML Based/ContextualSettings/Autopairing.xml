@@ -10,4 +10,9 @@
 		<syntax-context>js, js :not(comment, regex), php, php :not(comment), ruby, ruby :not(comment), python, python :not(comment)</syntax-context>
 		<value>[]{}()''""</value>
 	</setting>
+	
+	<setting name="autopair-opt-in">
+		<syntax-context>regex, regex :not(character-class, character-class :not(punctuation.definition.end), comment)</syntax-context>
+		<value>[](){}</value>
+	</setting>
 </settings>
