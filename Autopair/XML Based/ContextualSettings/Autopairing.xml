@@ -7,7 +7,7 @@
 	</setting>
 	
 	<setting name="autopair-opt-in">
-		<syntax-context>js, js :not(comment, regex), php, php :not(comment), ruby, ruby :not(comment), python, python :not(comment)</syntax-context>
+		<syntax-context>js, js :not(comment, comment *, regex, regex *, string, string :not(punctuation.end)), php, php :not(comment, comment *, string, string :not(punctuation.end)), ruby, ruby :not(comment, comment *, string, string :not(punctuation.end)), python, python :not(comment, comment *, string, string :not(punctuation.end))</syntax-context>
 		<value>[]{}()''""</value>
 	</setting>
 	
