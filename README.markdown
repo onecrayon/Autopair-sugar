@@ -1,10 +1,10 @@
 # Autopair.sugar
 
-Autopair.sugar adds automatic character pairing for [Espresso](http://macrabbit.com/espresso/). This means that in many contexts you can type a character like `[` and have a closing `]` automatically inserted.
+Autopair.sugar adds automatic character pairing for [Espresso](http://macrabbit.com/espresso/). This means that in many contexts you can type a character like `[` and have a closing `]` automatically inserted. It will also automatically skip over closing characters if you type a duplicate (requires characters to be balanced throughout the document).
 
 After installing Autopair.sugar, you can choose how you want it to behave in the advanced preferences:
 
-* **Autopair characters based on context** (default): If you choose this method of autopairing, then autopaired characters will only be inserted if the text following the cursor is optional whitespace followed by a punctuation character, or optional whitespace followed by a newline. This more conservative approach to autopairing is ideal for people who generally find autopairing frustrating.
+* **Autopair characters based on context** (default): If you choose this method of autopairing, then autopaired characters will only be inserted if the text following the cursor is optional whitespace followed by a punctuation character, or optional whitespace followed by a newline. This more conservative approach to autopairing is best for people who generally find autopairing frustrating.
 * **Autopair characters always**: If you enable this method, then valid characters will always be autopaired when you type them, regardless of context. This may be preferable for people used to other editors that provide autopairing.
 
 Installing this Sugar will enable autopairing for the programming languages that are bundled with Espresso, but by default it will not work in third-party languages unless their Sugar explicitly opts into it (more information on how to do this lower down).
@@ -55,7 +55,7 @@ If you want to autopair something other than ASCII quotation marks and braces, y
         </setting>
     </settings>
 
-(The "less than" bracket has to be specified either with an entity, as per above, or within a CDATA block or it will invalidate your XML.)
+(The "less than" bracket has to be specified either with an entity, as per above, or within a CDATA block; otherwise it will invalidate your XML.)
 
 **TextActions/AngleBrackets.xml** contains the action definitions that enable angle brackets and auto-closing capture (this is necessary to trigger the action in the first place; the autopair-opt-in setting then configures in what contexts the action should take over that character):
 
@@ -64,7 +64,6 @@ If you want to autopair something other than ASCII quotation marks and braces, y
         <action id="com.mydomain.sugar.autopair.angle-bracket" category="autopair.menu">
             <class>OCAutopair</class>
             <text-trigger key-equivalent="&lt;"></text-trigger>
-            <when-disabled>hide</when-disabled>
             <setup>
                 <character>&lt;</character>
             </setup>
