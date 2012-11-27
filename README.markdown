@@ -19,6 +19,12 @@ Installing this Sugar will enable autopairing for the programming languages that
 
 You **cannot** install this Sugar by cloning the git repository or using the "zip" button at the top of this page, because it is written in Objective-C and has to be compiled.
 
+## Exceptions to autopairing
+
+If there is a selection, the Espresso actions system will not trigger the autopairing action; for instance, if you are working in Javascript and type `else` CodeSense will fill in `else if` so when you type `{` the character will replace the selected `if` instead of autopairing. This is a shortcoming of how Espresso implements actions, and there is no short-term workaround.
+
+For those coming from TextMate (and derivatives), please note that Autopair.sugar will not wrap selected text when you type a pairing character. To wrap text, you should instead use the built-in **Actions&rarr;Text&rarr;Wrap With...** action (`command apostrophe` for keyboard junkies).
+
 ## Enabling autopairing for third-party languages
 
 To enable autopairing in a third-party Sugar, you will need to create a [ContextualSettings](http://wiki.macrabbit.com/index/ContextualSettings/) folder in the root of the Sugar, and add an XML file to it with the following contents:
