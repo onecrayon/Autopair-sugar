@@ -15,6 +15,7 @@
 }
 
 - (NSInteger)autopairMode;
+- (NSInteger)autopairSelectionMode;
 - (NSString *)balancingCharacterFor:(NSString *)character withRange:(NSRange)range inContext:(id)context;
 
 @end

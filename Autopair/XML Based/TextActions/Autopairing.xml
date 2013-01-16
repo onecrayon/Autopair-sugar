@@ -3,7 +3,7 @@
 	
 	<action id="com.onecrayon.sugar.autopair.single-quote" category="autopair.menu/autopair.quotes/1">
 		<class>OCAutopair</class>
-		<text-trigger key-equivalent="'"></text-trigger>
+		<key-equivalent>'</key-equivalent>
 		<when-disabled>hide</when-disabled>
 		<setup>
 			<character>'</character>
@@ -12,7 +12,7 @@
 	
 	<action id="com.onecrayon.sugar.autopair.double-quote" category="autopair.menu/autopair.quotes/2">
 		<class>OCAutopair</class>
-		<text-trigger key-equivalent='"'></text-trigger>
+		<key-equivalent>"</key-equivalent>
 		<when-disabled>hide</when-disabled>
 		<setup>
 			<character>"</character>
@@ -21,7 +21,7 @@
 	
 	<action id="com.onecrayon.sugar.autopair.round-brace" category="autopair.menu/autopair.braces/1">
 		<class>OCAutopair</class>
-		<text-trigger key-equivalent="("></text-trigger>
+		<key-equivalent>(</key-equivalent>
 		<when-disabled>hide</when-disabled>
 		<setup>
 			<character>(</character>
@@ -30,7 +30,7 @@
 	
 	<action id="com.onecrayon.sugar.autopair.square-brace" category="autopair.menu/autopair.braces/2">
 		<class>OCAutopair</class>
-		<text-trigger key-equivalent="["></text-trigger>
+		<key-equivalent>[</key-equivalent>
 		<when-disabled>hide</when-disabled>
 		<setup>
 			<character>[</character>
@@ -39,7 +39,7 @@
 	
 	<action id="com.onecrayon.sugar.autopair.curly-brace" category="autopair.menu/autopair.braces/3">
 		<class>OCAutopair</class>
-		<text-trigger key-equivalent="{"></text-trigger>
+		<key-equivalent>{</key-equivalent>
 		<when-disabled>hide</when-disabled>
 		<setup>
 			<character>{</character>
@@ -50,7 +50,7 @@
 	
 	<action id="com.onecrayon.sugar.autopair.single-quote.autoclose" category="hidden">
 		<class>OCAutoclose</class>
-		<text-trigger key-equivalent="'"></text-trigger>
+		<key-equivalent>'</key-equivalent>
 		<setup>
 			<character>'</character>
 		</setup>
@@ -58,7 +58,7 @@
 	
 	<action id="com.onecrayon.sugar.autopair.double-quote.autoclose" category="hidden">
 		<class>OCAutoclose</class>
-		<text-trigger key-equivalent='"'></text-trigger>
+		<key-equivalent>"</key-equivalent>
 		<setup>
 			<character>"</character>
 		</setup>
@@ -66,7 +66,7 @@
 	
 	<action id="com.onecrayon.sugar.autopair.square-brace.autoclose" category="hidden">
 		<class>OCAutoclose</class>
-		<text-trigger key-equivalent="]"></text-trigger>
+		<key-equivalent>]</key-equivalent>
 		<setup>
 			<character>]</character>
 		</setup>
@@ -74,7 +74,7 @@
 	
 	<action id="com.onecrayon.sugar.autopair.curly-brace.autoclose" category="hidden">
 		<class>OCAutoclose</class>
-		<text-trigger key-equivalent="}"></text-trigger>
+		<key-equivalent>}</key-equivalent>
 		<setup>
 			<character>}</character>
 		</setup>
@@ -82,7 +82,7 @@
 	
 	<action id="com.onecrayon.sugar.autopair.round-brace.autoclose" category="hidden">
 		<class>OCAutoclose</class>
-		<text-trigger key-equivalent=")"></text-trigger>
+		<key-equivalent>)</key-equivalent>
 		<setup>
 			<character>)</character>
 		</setup>

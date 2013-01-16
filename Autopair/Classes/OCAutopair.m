@@ -21,6 +21,7 @@
 	// Runs one-time initialization code upon bundle load
 	// Setup the default preferences, in case they've never been modified
 	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:1] forKey:@"OCAutopairMode"]];
+	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:0] forKey:@"OCAutopairSelectionMode"]];
 }
 
 - (id)initWithDictionary:(NSDictionary *)dictionary bundlePath:(NSString *)bundlePath
@@ -55,7 +56,7 @@
 {
 	NSRange range = [[[context selectedRanges] objectAtIndex:0] rangeValue];
 	// FIXME: figure out how to localize this!
-	if (range.length > 0) {
+	if (range.length > 0 && [self autopairSelectionMode]) {
 		NSString *balancedCharacter = [self balancingCharacterFor:character withRange:range inContext:context];
 		return (balancedCharacter != nil ? [NSString stringWithFormat:@"Wrap With %@ %@", character, balancedCharacter] : @"Disabled");
 	} else {
@@ -112,7 +113,11 @@
 	CETextSnippet *snippet;
 	if (autopair) {
 		// Easiest just to backslash all characters for safety
-		snippet = [CETextSnippet snippetWithString:[NSString stringWithFormat:@"\\%@${1:$EDITOR_SELECTION}\\%@", character, [self balancingCharacterFor:character withRange:range inContext:context]]];
+		if ([self autopairSelectionMode]) {
+			snippet = [CETextSnippet snippetWithString:[NSString stringWithFormat:@"\\%@${1:$EDITOR_SELECTION}\\%@", character, [self balancingCharacterFor:character withRange:range inContext:context]]];
+		} else {
+			snippet = [CETextSnippet snippetWithString:[NSString stringWithFormat:@"\\%@$1\\%@", character, [self balancingCharacterFor:character withRange:range inContext:context]]];
+		}
 	} else {
 		// Always insert the character they typed
 		snippet = [CETextSnippet snippetWithString:[NSString stringWithFormat:@"\\%@$0", character]];
@@ -124,6 +129,11 @@
 - (NSInteger)autopairMode
 {
 	return [[NSUserDefaults standardUserDefaults] integerForKey:@"OCAutopairMode"];
+}
+			
+- (NSInteger)autopairSelectionMode
+{
+	return [[NSUserDefaults standardUserDefaults] integerForKey:@"OCAutopairSelectionMode"];
 }
 
 - (NSString *)balancingCharacterFor:(NSString *)targetCharacter withRange:(NSRange)range inContext:(id)context
