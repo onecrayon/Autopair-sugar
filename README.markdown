@@ -6,24 +6,20 @@ After installing Autopair.sugar, you can choose how you want it to behave in the
 
 * **Autopair characters based on context** (default): If you choose this method of autopairing, then autopaired characters will only be inserted if the text following the cursor is optional whitespace followed by a punctuation character, or optional whitespace followed by a newline. This more conservative approach to autopairing is best for people who generally find autopairing frustrating.
 * **Autopair characters always**: If you enable this method, then valid characters will always be autopaired when you type them, regardless of context. This may be preferable for people used to other editors that provide autopairing.
+* **Replace selection** (default): Typing a pairing character will replace any selected text with the paired characters.
+* **Wrap selection**: Typing a pairing character will wrap any selected text with the paired characters (this is for you TextMate ex-pats).
 
 Installing this Sugar will enable autopairing for the programming languages that are bundled with Espresso, but by default it will not work in third-party languages unless their Sugar explicitly opts into it (more information on how to do this lower down).
 
 ## Installation
 
-**Requires Espresso 2.0**
+**Requires Espresso 2.1**
 
-1. [Download Autopair.sugar](https://github.com/downloads/onecrayon/Autopair-sugar/Autopair.sugar.zip)
+1. [Download Autopair.sugar](http://onecrayon.com/downloads/Autopair.sugar.zip)
 2. Unzip the downloaded file (if your browser doesn't do it for you)
 3. Double click the Autopair.sugar file to install it
 
 You **cannot** install this Sugar by cloning the git repository or using the "zip" button at the top of this page, because it is written in Objective-C and has to be compiled.
-
-## Exceptions to autopairing
-
-If there is a selection, the Espresso actions system will not trigger the autopairing action; for instance, if you are working in Javascript and type `else` CodeSense will fill in `else if` so when you type `{` the character will replace the selected `if` instead of autopairing. This is a shortcoming of how Espresso implements actions, and there is no short-term workaround.
-
-For those coming from TextMate (and derivatives), please note that Autopair.sugar will not wrap selected text when you type a pairing character. To wrap text, you should instead use the built-in **Actions&rarr;Text&rarr;Wrap With...** action (`command apostrophe` for keyboard junkies).
 
 ## Enabling autopairing for third-party languages
 
@@ -32,7 +28,7 @@ To enable autopairing in a third-party Sugar, you will need to create a [Context
     <?xml version="1.0" encoding="UTF-8"?>
     <settings>
         <setting name="autopair-opt-in">
-            <language-context>java</language-context>
+            <syntax-context>java, java :not(comment, comment *, string, string :not(punctuation.end))</syntax-context>
             <value>[]{}()''""</value>
         </setting>
     </settings>
@@ -69,7 +65,7 @@ If you want to autopair something other than ASCII quotation marks and braces, y
     <action-recipes>
         <action id="com.mydomain.sugar.autopair.angle-bracket" category="autopair.menu">
             <class>OCAutopair</class>
-            <text-trigger key-equivalent="&lt;"></text-trigger>
+            <key-equivalent>&lt;</key-equivalent>
             <setup>
                 <character>&lt;</character>
             </setup>
@@ -77,7 +73,7 @@ If you want to autopair something other than ASCII quotation marks and braces, y
         
         <action id="com.mydomain.sugar.autopair.angle-bracket.autoclose" category="hidden">
             <class>OCAutoclose</class>
-            <text-trigger key-equivalent=">"></text-trigger>
+            <key-equivalent>></key-equivalent>
             <setup>
                 <character>></character>
             </setup>
@@ -90,7 +86,7 @@ For more information about Sugar development and exactly how these XML files wor
 
 ## MIT License
 
-Copyright (c) 2011-2012 Ian Beck
+Copyright (c) 2011-2013 Ian Beck
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
