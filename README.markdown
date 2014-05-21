@@ -1,6 +1,6 @@
 # Autopair.sugar
 
-Autopair.sugar adds automatic character pairing for [Espresso](http://macrabbit.com/espresso/). This means that in many contexts you can type a character like `[` and have a closing `]` automatically inserted. It will also automatically skip over closing characters if you type a duplicate (requires characters to be balanced throughout the document).
+Autopair.sugar adds automatic character pairing for [Espresso](http://macrabbit.com/espresso/). This means that in many contexts you can type a character like `[` and have a closing `]` automatically inserted. It will also automatically skip over closing characters if you type a duplicate (requires characters to be balanced throughout the document) and delete both characters if you delete the opening character when the two are flanking the cursor.
 
 After installing Autopair.sugar, you can choose how you want it to behave in the advanced preferences:
 
@@ -84,9 +84,23 @@ For more information about Sugar development and exactly how these XML files wor
 
 **Please note** that autopairing arbitrary characters can sometimes interact with the system in strange ways; for instance, autopairing angle brackets in HTML as described above will interact poorly with Espresso's built-in automatic tag closing (which is why something like that is not supported by Autopair.sugar by default).
 
+## Changelog
+
+**1.2**:
+
+* New hidden action: deleting an opening balanced character will also delete the closing character if the two are surrounding the cursor
+
+**1.1**:
+
+* New selection behavior: now will either replace the selected text with balanced characters or wrap it
+
+**1.0**:
+
+* Initial release
+
 ## MIT License
 
-Copyright (c) 2011-2013 Ian Beck
+Copyright (c) 2011-2014 Ian Beck
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
