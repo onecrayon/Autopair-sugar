@@ -11,6 +11,7 @@
 		7A1F5912144798A40095C33A /* OCAutopair.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1F5911144798A40095C33A /* OCAutopair.m */; };
 		7A55E273144DF9B90053EE28 /* OCAutopairPreferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A55E271144DF9B90053EE28 /* OCAutopairPreferences.xib */; };
 		7A95F51815F80E1A009A6DCE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A95F51615F80E1A009A6DCE /* Localizable.strings */; };
+		7AC3643E192D12FE0082ABBD /* OCAutodelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC3643D192D12FE0082ABBD /* OCAutodelete.m */; };
 		7AEBDCB715F9264700C0006B /* OCAutoclose.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEBDCB615F9264700C0006B /* OCAutoclose.m */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,8 @@
 		7A95F51715F80E1A009A6DCE /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A95F51915F8101B009A6DCE /* ContextualSettings */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ContextualSettings; sourceTree = "<group>"; };
 		7A95F51A15F8101B009A6DCE /* TextActions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TextActions; sourceTree = "<group>"; };
+		7AC3643C192D12FE0082ABBD /* OCAutodelete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCAutodelete.h; path = Classes/OCAutodelete.h; sourceTree = "<group>"; };
+		7AC3643D192D12FE0082ABBD /* OCAutodelete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCAutodelete.m; path = Classes/OCAutodelete.m; sourceTree = "<group>"; };
 		7AEBDCB515F9264700C0006B /* OCAutoclose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCAutoclose.h; path = Classes/OCAutoclose.h; sourceTree = "<group>"; };
 		7AEBDCB615F9264700C0006B /* OCAutoclose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCAutoclose.m; path = Classes/OCAutoclose.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +105,8 @@
 				7A1F5911144798A40095C33A /* OCAutopair.m */,
 				7AEBDCB515F9264700C0006B /* OCAutoclose.h */,
 				7AEBDCB615F9264700C0006B /* OCAutoclose.m */,
+				7AC3643C192D12FE0082ABBD /* OCAutodelete.h */,
+				7AC3643D192D12FE0082ABBD /* OCAutodelete.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AC3643E192D12FE0082ABBD /* OCAutodelete.m in Sources */,
 				7A1F5912144798A40095C33A /* OCAutopair.m in Sources */,
 				7AEBDCB715F9264700C0006B /* OCAutoclose.m in Sources */,
 			);
@@ -263,6 +269,8 @@
 				HEADER_SEARCH_PATHS = "$(ESPRESSO_PATH)/Contents/Headers";
 				INFOPLIST_FILE = Autopair/Info.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = sugar;
 			};
 			name = Debug;
@@ -280,6 +288,8 @@
 				HEADER_SEARCH_PATHS = "$(ESPRESSO_PATH)/Contents/Headers";
 				INFOPLIST_FILE = Autopair/Info.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = sugar;
 			};
 			name = Release;

@@ -46,6 +46,13 @@
 		</setup>
 	</action>
 	
+	<!-- The autodelete action happens when you try to delete a character whose balanced pair is immediately to the right of the cursor -->
+	
+	<action id="com.onecrayon.sugar.autopair.delete-pair" category="hidden">
+		<class>OCAutodelete</class>
+		<key-equivalent>backspace</key-equivalent>
+	</action>
+	
 	<!-- Autoclose actions handle what happens when you type a closing character immediately adjacent to another closing character -->
 	
 	<action id="com.onecrayon.sugar.autopair.single-quote.autoclose" category="hidden">
