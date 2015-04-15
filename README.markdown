@@ -86,6 +86,11 @@ For more information about Sugar development and exactly how these XML files wor
 
 ## Changelog
 
+**1.3**:
+
+* New hidden action: typing a semicolon will insert it outside the closing brace if balanced braces immediately surround the cursor
+* New hidden action: control-semicolon within balanced braces will insert the semicolon outside the closing brace and do a smart linebreak+indent at the cursor
+
 **1.2**:
 
 * New hidden action: deleting an opening balanced character will also delete the closing character if the two are surrounding the cursor
