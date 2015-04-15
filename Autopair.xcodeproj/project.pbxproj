@@ -23,6 +23,7 @@
 		7A1F5910144798A40095C33A /* OCAutopair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCAutopair.h; path = Classes/OCAutopair.h; sourceTree = "<group>"; };
 		7A1F5911144798A40095C33A /* OCAutopair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCAutopair.m; path = Classes/OCAutopair.m; sourceTree = "<group>"; };
 		7A55E272144DF9B90053EE28 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/OCAutopairPreferences.xib; sourceTree = "<group>"; };
+		7A6195E31ADF1C27009DAD99 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scripts; sourceTree = "<group>"; };
 		7A95F51715F80E1A009A6DCE /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A95F51915F8101B009A6DCE /* ContextualSettings */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ContextualSettings; sourceTree = "<group>"; };
 		7A95F51A15F8101B009A6DCE /* TextActions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TextActions; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		7A1F5909144797EE0095C33A /* XML Based */ = {
 			isa = PBXGroup;
 			children = (
+				7A6195E31ADF1C27009DAD99 /* Scripts */,
 				7A95F51915F8101B009A6DCE /* ContextualSettings */,
 				7A95F51A15F8101B009A6DCE /* TextActions */,
 			);

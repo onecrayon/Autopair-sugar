@@ -53,6 +53,19 @@
 		<key-equivalent>backspace</key-equivalent>
 	</action>
 	
+	<!-- The smart_semicolon script checks for braces immediately surrounding the cursor, and if they are there sticks the semicolon outside -->
+	<action id="com.onecrayon.sugar.autopair.smart-semicolon" category="hidden">
+		<script>smart-semicolon.js</script>
+		<text-trigger key-equivalent=";"></text-trigger>
+	</action>
+	<action id="com.onecrayon.sugar.autopair.smart-semicolon-linebreak" category="hidden">
+		<script>smart-semicolon.js</script>
+		<key-equivalent>control ;</key-equivalent>
+		<setup>
+			<forceLinebreak>yes</forceLinebreak>
+		</setup>
+	</action>
+	
 	<!-- Autoclose actions handle what happens when you type a closing character immediately adjacent to another closing character -->
 	
 	<action id="com.onecrayon.sugar.autopair.single-quote.autoclose" category="hidden">
