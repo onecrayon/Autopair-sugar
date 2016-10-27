@@ -74,6 +74,7 @@
 		 
 		 - We are the last thing on the line (excluding whitespace)
 		 - The following character is common syntactic punctuation (excluding whitespace)
+		 - The previous character(s) are not an even number of backslashes (we don't want to pair when they are escaping the paired character because we cannnot predict what they are doing)
 		 */
 		// Grab the string for the end of the line
 		NSUInteger nextStartIndex = [[context lineStorage] lineStartIndexGreaterThanIndex:range.location];
@@ -102,6 +103,23 @@
 				} else if (![whitespaceChars characterIsMember:testChar]) {
 					// If the character isn't whitespace or a legal character, then break out and don't autopair
 					break;
+				}
+			}
+			// If we can autopair, ensure we are not working with a backslash escaped character
+			if (autopair && range.location > 0 && [[[context string] substringWithRange:NSMakeRange(range.location - 1, 1)] isEqualToString:@"\\"]) {
+				NSUInteger prevStartIndex = range.location - 1;
+				NSUInteger totalBackslashes = 0;
+				while ([[[context string] substringWithRange:NSMakeRange(prevStartIndex, 1)] isEqualToString:@"\\"]) {
+					totalBackslashes++;
+					if (prevStartIndex == 0) {
+						break;
+					} else {
+						prevStartIndex--;
+					}
+				}
+				// If we have an odd number of backslashes, do not autopair
+				if (totalBackslashes % 2) {
+					autopair = NO;
 				}
 			}
 		}
