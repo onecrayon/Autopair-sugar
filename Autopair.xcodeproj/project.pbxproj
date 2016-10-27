@@ -238,7 +238,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = NS_BUILD_32_LIKE_64;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
@@ -252,7 +252,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = NS_BUILD_32_LIKE_64;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
@@ -262,6 +262,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(ESPRESSO_PATH)/Contents/MacOS/Espresso";
+				CLANG_LINK_OBJC_RUNTIME = NO;
 				COPY_PHASE_STRIP = NO;
 				ESPRESSO_PATH = /Applications/Espresso.app;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -281,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(ESPRESSO_PATH)/Contents/MacOS/Espresso";
+				CLANG_LINK_OBJC_RUNTIME = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ESPRESSO_PATH = /Applications/Espresso.app;
