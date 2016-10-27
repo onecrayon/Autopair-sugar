@@ -86,6 +86,10 @@ For more information about Sugar development and exactly how these XML files wor
 
 ## Changelog
 
+**1.4**:
+
+* No longer autopairs if there are an odd number of backslash characters preceding the cursor
+
 **1.3**:
 
 * New hidden action: typing a semicolon will insert it outside the closing brace if balanced braces immediately surround the cursor
@@ -105,7 +109,7 @@ For more information about Sugar development and exactly how these XML files wor
 
 ## MIT License
 
-Copyright (c) 2011-2014 Ian Beck
+Copyright (c) 2011-2016 Ian Beck
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
