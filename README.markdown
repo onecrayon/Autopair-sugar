@@ -86,6 +86,10 @@ For more information about Sugar development and exactly how these XML files wor
 
 ## Changelog
 
+**1.5**:
+
+* Now autopairs Python triple-quoted strings (so typing `"""` autopairs to `""""""`)
+
 **1.4**:
 
 * No longer autopairs if there are an odd number of backslash characters preceding the cursor
