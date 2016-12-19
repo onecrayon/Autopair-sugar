@@ -130,11 +130,18 @@
 	
 	CETextSnippet *snippet;
 	if (autopair) {
+		NSString *balancedCharacter = [self balancingCharacterFor:character withRange:range inContext:context];
 		// Easiest just to backslash all characters for safety
 		if ([self autopairSelectionMode]) {
-			snippet = [CETextSnippet snippetWithString:[NSString stringWithFormat:@"\\%@${1:$EDITOR_SELECTION}\\%@", character, [self balancingCharacterFor:character withRange:range inContext:context]]];
+			snippet = [CETextSnippet snippetWithString:[NSString stringWithFormat:@"\\%@${1:$EDITOR_SELECTION}\\%@", character, balancedCharacter]];
 		} else {
-			snippet = [CETextSnippet snippetWithString:[NSString stringWithFormat:@"\\%@$1\\%@", character, [self balancingCharacterFor:character withRange:range inContext:context]]];
+			// If we are working with Python, check for a preceding double quotes (means we are completing a triple quoted string)
+			SXSelector *pythonRoot = [SXSelector selectorWithString:@"language-root.python"];
+			if ([character isEqualToString:balancedCharacter] && range.location >= 2 && [pythonRoot matches:[[context syntaxTree] rootZone]] && [[[context string] substringWithRange:NSMakeRange(range.location - 2, 2)] isEqualToString:[@"" stringByPaddingToLength:2 withString:character startingAtIndex:0]]) {
+				snippet = [CETextSnippet snippetWithString:[NSString stringWithFormat:@"\\%@$1\\%@", character, [@"" stringByPaddingToLength:3 withString:character startingAtIndex:0]]];
+			} else {
+				snippet = [CETextSnippet snippetWithString:[NSString stringWithFormat:@"\\%@$1\\%@", character, balancedCharacter]];
+			}
 		}
 	} else {
 		// Always insert the character they typed
